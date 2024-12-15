@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio | Sai Mani Teja Reddy Alla</title>
+
+        <!-- FONT-AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="Style/styles.css">
+
+        <style>
+            .contact {
+                text-align: center;
+                margin-top: 2rem;
+                padding: 2rem;
+            }
+
+            .contact-hidden {
+                display: none;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .contact-visible {
+                display: block;
+            }
+
+            .contact h2 {
+                font-size: 3rem;
+                cursor: pointer;
+                color: #59B2F4;
+            }
+
+            .contact h2:hover {
+                text-decoration: underline;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 3rem;
+                margin-top: 2rem;
+            }
+
+            .social-icons a {
+                color: #59B2F4;
+                font-size: 4rem;
+                text-align: center;
+                transition: color 0.3s ease;
+            }
+
+            .social-icons a:hover {
+                color: #007bff;
+            }
+
+            #contact-info {
+                margin-top: 2rem;
+                display: none;
+                color: #59B2F4;
+                font-size: 1.8rem;
+            }
+
+            .copy-button {
+                margin-left: 10px;
+                padding: 0.5rem 1rem;
+                background-color: #59B2F4;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                font-size: 1rem;
+            }
+
+            .copy-button:hover {
+                background-color: #007bff;
+            }
+
+            
+            
+        </style>
+
+        <script>
+            function toggleContactDetails() {
+                const details = document.querySelector('.contact-hidden');
+                details.style.display = details.style.display === 'block' ? 'none' : 'block';
+            }
+
+            function revealContent(infoType) {
+                const infoContent = {
+                    'linkedin-info': 'LinkedIn: <a href="https://linkedin.com/in/manitejareddy" target="_blank">linkedin.com/in/manitejareddy</a>',
+                    'email-info': 'Email: <a href="mailto:saimanit@buffalo.edu">saimanit@buffalo.edu</a>',
+                    'phone-info': 'Phone: 7165338659',
+                };
+
+                const displayDiv = document.getElementById('contact-info');
+                const content = infoContent[infoType] || '';
+
+                if (content) {
+                    displayDiv.innerHTML = `${content} <button class='copy-button' onclick='copyToClipboard("${content.replace(/<[^>]*>?/gm, '')}")'>Copy</button>`;
+                    displayDiv.style.display = 'block';
+                }
+            }
+
+            function copyToClipboard(text) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('Copied to clipboard!');
+                });
+            }
+        </script>
+
+    
+    
+    </head>
+    <body>
+        <!-- Header Design -->
+        <header class="header">
+            <a href="#" class="logo">Sai Mani Teja Reddy Alla</a>
+
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+            <nav class="navbar">
+                <a href="#home" class="active">Home</a>
+                <a href="#education">Education</a>
+                <a href="#Experience">Experience</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Home Section -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <h3>Hi, I'm</h3>
+                <h1>Sai Mani Teja Reddy Alla</h1>
+                <h3>A Data Engineer & Software Engineer</h3>
+                <p>Experienced in building robust data pipelines, optimizing ETL workflows, and leveraging cloud solutions to deliver actionable insights for businesses.</p>
+                <div class="social-media">
+                    <a href="https://linkedin.com/in/manitejareddy" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:your-email@gmail.com?subject=Hello%20There&body=I%20would%20like%20to%20connect%20with%20you." target="_blank">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+                <a href="img/Sai_Mani_Teja_Reddy.pdf" class="btn" download>Download CV</a>
+            </div>
+            <div class="home-img">
+                <img src="img/dd_resized.jpg" alt="Sai Mani Teja Reddy Alla">
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <!-- Education Section -->
+        <section class="education" id="education">
+            <h2>Education</h2>
+            <div class="education-container">
+                <div class="education-box">
+                    <img src="img/ub_logo.png" alt="University at Buffalo">
+                    <div>
+                        <h3>University at Buffalo, New York</h3>
+                        <p><strong>Master of Science</strong> | Engineering Science </p>
+                        <p><strong>Relevant Coursework:</strong></p>
+                        <ul>
+                            <li>CSE-574: Introduction To Machine Learning</li>
+                            <li>CSE-587: Data Intensive Computing</li>
+                            <li>EAS-508: Statistical Learning I</li>
+                            <li>EAS-509: Statistical Learning II</li>
+                            <li>CSE-560: Data Models and Query Language</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-box">
+                    <img src="img/srm_logo.png" alt="SRM University">
+                    <div>
+                        <h3>SRM University, Tamil Nadu, India</h3>
+                        <p><strong>Bachelor of Technology</strong> | Electronics and communication</p>
+                        <p><strong>Relevant Coursework:</strong></p>
+                        <ul>
+                            <li>Data Structures</li>
+                            <li>Analysis and Design of Algorithms</li>
+                            <li>Big Data and Analytics</li>
+                            <li>Cloud Computing</li>
+                            <li>Programming in Python</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Experience Section</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+            <section class="experience" id="Experience">
+                <h2 class="heading">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="company-title">DataSenseIT LLC </h3>
+                            <p class="job-title">Software Engineer</p>
+                            <p class="job-title">Sep 2024 – Present</p>
+                            <ul class="job-description">
+                                <li>Partnered effectively with product managers and cross-functional teams to convert business needs into robust technical solutions. My collaborative efforts were instrumental in delivering high-quality software on schedule and budget, resulting in significant improvements in system performance and user satisfaction.</li>
+                                <li>Migrated the database layer from Derby to PostgreSQL to enhance performance, consistency, and durability, and developed a service layer that facilitates decoupling across UI, service, and business logic layers, enabling flexible database store integration.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="company-title">Centrepoint Soft Tech</h3>
+                            <p class="job-title">Data Engineer - Bengaluru, Karnataka</p>
+                            <p class="job-title">Mar 2020 – Dec 2022</p>
+                            <ul class="job-description">
+                                <li>Implemented robust AWS data security protocols and optimized data storage using Parquet, AVRO, and Fixed Width formats, enhancing the security and efficiency of large-scale retail datasets.</li>
+                                <li>Optimized Amazon Redshift Data Warehouse, reducing query response time by 30% and improving system performance by 25%, and managed data ingestion and workflow orchestration using AWS Step Functions and Apache Airflow.</li>
+                                <li>Achieved a 15% reduction in ETL process runtime for retail data through meticulous debugging and enhancements, leveraging Amazon CloudWatch to monitor performance and optimize operations.</li>
+                                <li>Designed and maintained robust data models for structured and semi-structured retail datasets, utilizing AWS S3 for scalable storage, which facilitated faster data analytics and insights into consumer behavior.</li>
+                                <li>Developed 60+ ETL pipelines on AWS Platform using Glue, processing 50 TB of raw batch data into actionable insights, and automated 90% of manual tasks, saving over 100 hours from development to production.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3 class="company-title">Sln Technologies</h3>
+                            <p class="job-title">Data Engineer Intern - Chennai, Tamil Nadu</p>
+                            <p class="job-title">May 2019 – Jul 2019</p>
+                            <ul class="job-description">
+                                <li>Worked on AWS services like EC2, S3, RDS, Lambda, and DynamoDB, designing scalable ETL pipelines using AWS Glue and S3.</li>
+                                <li>Executed AWS-based projects, including data migration to AWS RDS, serverless architecture for real-time data processing, and S3-based data lake setup with Athena and Glue.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </body>
+        </html>
+
+
+
+
+
+        
+        
+        
+        
+        
+
+        <!-- Portfolio Section -->
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <h2 class="heading">portfolio</h2>
+            <div class="certifications-container">
+                <div class="certification-box">
+                    <a href="https://github.com/saimanit/Capstone_Essay/blob/2480ed83141d6a93c9d6d404310f1a03681bf38d/Capstone_Essay.pdf" target="_blank">
+                        <img src="img/Capstone_Essay.jpg" alt="Capstone_Essay">
+                        <div class="hover-content">
+                            Capstone_Essay
+                        </div>
+                    </a>
+                </div>
+                <div class="certification-box">
+                    <a href="https://github.com/saimanit/NEWYORK-PROPERTY-SALES-PREDICTION/blob/c0a43b9a0dae126437a4fa08a3b780e470be7908/NYC%20PROPERTY%20SALES.pdf" target="_blank">
+                        <img src="img/NEWYORK SALES PREDICTION.JPG" alt="conference">
+                        <div class="hover-content">NEWYORK SALES PREDICTION</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        
+
+        <!-- Certifications Section -->
+        <section class="certifications" id="certifications">
+            <h2 class="heading">Certifications</h2>
+            <div class="certifications-container">
+                <div class="certification-box">
+                    <a href="https://credentials.databricks.com/4bcf8850-2e70-42d7-b519-833ef7278420#acc.nXjWgufa" target="_blank">
+                        <img src="img/Databricks fundamentals.jpg" alt="Databricks fundamentals certificate">
+                        <div class="hover-content">
+                            Databricks fundamentals certificate
+                        </div>
+                    </a>
+                </div>
+                <div class="certification-box">
+                    <a href="https://www.hackerrank.com/certificates/iframe/c21f7281a897" target="_blank">
+                        <img src="img/sql_intermediate certificate.jpg" alt="sql_intermediate certificate">
+                        <div class="hover-content">
+                            sql_intermediate certificate
+                        </div>
+                    </a>
+                </div>
+                <div class="certification-box">
+                    <a href="https://coursera.org/verify/7ATEVDK5JEBT" target="_blank">
+                        <img src="img/python-getting-started.jpg" alt="Programming for Everybody (Getting Started with Python)">
+                        <div class="hover-content">
+                            Programming for Everybody (Getting Started with Python)
+                        </div>
+                    </a>
+                </div>
+                <div class="certification-box">
+                    <a href="https://coursera.org/verify/LBGT79K7WMNK" target="_blank">
+                        <img src="img/python-data-structures.jpg" alt="Python Data Structures">
+                        <div class="hover-content">Python Data Structures</div>
+                    </a>
+                </div>
+                <div class="certification-box">
+                    <a href="https://coursera.org/verify/5SE2JCLLVJZN" target="_blank">
+                        <img src="img/programming-foundations.jpg" alt="Programming Foundations with JavaScript, HTML, and CSS">
+                        <div class="hover-content">Programming Foundations with JavaScript, HTML, and CSS</div>
+                    </a>
+                </div>
+                <div class="certification-box">
+                    <a href="https://github.com/saimanit/B.tech/blob/89a4be57d3f3f082fefb8d7e6410762045e0c697/conference.pdf" target="_blank">
+                        <img src="img/conference.jpg" alt="conference">
+                        <div class="hover-content">conference</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2 class="heading" onclick="toggleContactDetails()">Contact Sai Mani Teja Reddy Alla</h2>
+
+            <div class="contact-hidden">
+                <div class="social-icons">
+                    <a href="javascript:void(0)" onclick="revealContent('linkedin-info')">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="revealContent('email-info')">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="javascript:void(0)" onclick="revealContent('phone-info')">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <!-- Added GitHub link -->
+                    <a href="https://github.com/saimanit" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <div id="contact-info">
+                    <!-- Info dynamically appears here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-text">
+                <p>Copyright &copy; 2024 by Sai Mani Teja Reddy Alla | All Rights Reserved.</p>
+            </div>
+
+            <div class="footer-iconTop">
+                <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+            </div>
+        </footer>
+
+        <!-- Typed.js -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <!-- Scroll Reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- Main JS -->
+        <script src="JS/main.js"></script>
+    </body>
+</html>
+
+
